@@ -71,7 +71,6 @@ ln 16-17: init width and height local vars for first triangle, width = 30.0, hei
 ln 18: create an instance of the Area class, called second, passing width and height in. The static variables base and height are shared between first and second, meaning despite there being two instances, there is only one set of static variables that are accessible to all instances. So, when second writes to width with 30.0 and to height with 5.0, when first accesses width and height it will see 30.0 and 5.0.
 ln 20: calculate area of first (width = 30.0 height = 5.0), print it (75.0)
 ln 20: calculate area of second (width = 30.0 height = 5.0), print it (75.0)
-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
 	 */
 	
 }
