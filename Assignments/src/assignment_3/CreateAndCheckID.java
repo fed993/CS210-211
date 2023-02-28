@@ -32,18 +32,26 @@ public class CreateAndCheckID {
 		userIDs.add(userID);
 		System.out.printf("%s has been created successfully", userID);
 		
+		
+		
+		
+		
+		
+		
 		PrintStream out = new PrintStream(file); 
 		writeFile(out, userIDs);
-		
-		
 	}
-	
 	
 	public static void writeFile(PrintStream out, ArrayList userIDs) {
 		for (int i = 0; i < userIDs.size(); i++) {
 			out.println(userIDs.get(i));
 		}
 	}
+	
+	
+	
+	
+	
 	
 	public static ArrayList<String> readFile(Scanner fileReader, ArrayList<String> userIDs) {
 		System.out.println("Current User IDs:");
