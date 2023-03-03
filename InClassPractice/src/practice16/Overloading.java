@@ -13,21 +13,45 @@ d is the result of m(double, double), meaning the second method is run. This is 
 e is the result of m(int, int). This is because the second parameter, d, is cast to an int, before being sent to the methods. The method returns the result of 12 % 13, meaning "What's the remainder when we divide 12 by 13?" Since 12 is smaller than 13, the remainder is 0. The result is returned as a double, so e = 0.0
  * 
  * 
- * The mistake here is flagging the variables shape.width and shape.height with the static keyword. This means that width and height are shared between all instances of shape, so if any instance writes to width or height, all instances will have their width or height overwritten.
+ * 
+ * 
+ * 
+ * 
+ 	The mistake here is flagging the variables shape.width and shape.height with the static keyword. 
+ 	This means that width and height are shared between all instances of shape, so if any instance writes to width or height, all instances will have their width or height overwritten.
+	
+	When shape s2 sets its width and height on lines 26 and 27, they overwrite the width and height of s1. 
+	This means that when lines 28 and 29 run, the (intended) area of s2 is printed twice. 
 
-When shape s2 sets its width and height on lines 26 and 27, they overwrite the width and height of s1. This means that when lines 28 and 29 run, the (intended) area of s2 is printed twice. 
-
-To fix this mistake, simply remove the static keyword from lines 5 and 6. Then, width and height will be variables unique to each instance of shape (instance variables) instead of shared between all instances (class variables).
+	To fix this mistake, simply remove the static keyword from lines 5 and 6. 
+	Then, width and height will be variables unique to each instance of shape (instance variables) instead of shared between all instances (class variables).
  */
-
-public class Overloading {
-	static double m(double x, int y) {
-		return x - y;
+class Shape {
+	public static double width;
+	public static double height;
+	
+	Shape(double width, double height) {
+		width = width;
+		height = height;
 	}
 	
+	public double calculateArea() {
+		return width * height;
+	}
+}
+
+public class Overloading {
+	
 	public static void main(String[] args) {
+		Shape s1 = new Shape(10.0, 2.0);
+		s1.width = 10.0;
+		s1.height = 2.0;
+		Shape s2 = new Shape(30.0, 5.0);
+		s2.width = 30.0;
+		s2.height = 5.0;
 		
-		System.out.println(m(25.0, 12));
+		System.out.println(s1.calculateArea());
+		System.out.println(s2.calculateArea());
 	}
 
 }
