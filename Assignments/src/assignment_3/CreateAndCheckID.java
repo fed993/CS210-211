@@ -29,9 +29,17 @@ public class CreateAndCheckID {
 	
 	public static void main(String[] args) throws FileNotFoundException  {
 		final String ID_DATABASE_PATH = "IDs.txt"; // locate file path
+		
+		
+		
+		
 		File file = new File(ID_DATABASE_PATH); // init files
 		
 		Scanner fileReader = new Scanner(file); // init file scanner
+		
+		
+		
+		
 		Scanner userInput = new Scanner(System.in); // init user input scanner
 		
 		String userID = ""; // this will store the ID the user is creating
