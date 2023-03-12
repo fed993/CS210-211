@@ -4,12 +4,12 @@ import java.io.*;
 import java.util.*;
 
 // this defines a person object, used to store information about each person in the file
-class Person {
-	public String role = "";
-	public String name = "";
-	public String gender = "";
-	public int age = 1;
-}
+//class Person {
+//	public String role = "";
+//	public String name = "";
+//	public String gender = "";
+//	public int age = 1;
+//}
 
 /*this class reads the file to a list, contains methods to filter the list based on  
 	the occupation of the person
